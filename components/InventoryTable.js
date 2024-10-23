@@ -1,5 +1,7 @@
-function InventoryTable() {
-  const rows = Array.from({ length: 100 }, (_,index) => (
+import React from 'react';
+
+function InventoryRow({ index }) {
+  return (
     <tr key={index} className="text-center">
       <td>{index + 1}</td>
       <td>Paracetamol</td>
@@ -14,11 +16,17 @@ function InventoryTable() {
         <button className="bg-green-600 hover:bg-green-700 p-1 rounded text-xs">Edit</button>
       </td>
     </tr>
+  );
+}
+
+function InventoryTable() {
+  const rows = Array.from({ length: 100 }, (_, index) => (
+    <InventoryRow key={index} index={index} />
   ));
 
   return (
-    <>
-      <table className="w-full h-screen border rounded">
+    <div className="overflow-auto h-screen">
+      <table className="w-full border rounded">
         <thead className="sticky top-0 bg-slate-400">
           <tr>
             <th>No</th>
@@ -34,7 +42,7 @@ function InventoryTable() {
         </thead>
         <tbody>{rows}</tbody>
       </table>
-    </>
+    </div>
   );
 }
 
