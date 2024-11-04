@@ -1,7 +1,5 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Navigator from "../../components/Navigator";
 export const metadata = {
   title: "Store Management",
   description: "Store Management Application",
@@ -10,8 +8,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-gradient-to-r from-emerald-50 via-sky-100 to-purple-100 ${inter.className}`}>
-        {children}
+      <body className="overflow-y-hidden overflow-x-auto">
+      <div className="flex">
+            <div className="flex-none">
+               <Navigator></Navigator>
+            </div>
+            <div className="flex-1">
+                {children}
+            </div>
+        </div >
       </body>
     </html >
   );

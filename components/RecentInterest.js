@@ -32,10 +32,10 @@ export default function RecentInterest(props) {
 
     return (
 
-        <div className={`w-52 mt-4 rounded-2xl h-28 grid grid-rows-3 gap-4 border-2 ${className}`} style={backgroundImageStyle} >
-            <div className=" ms-3">{cardHeader}</div>
-            <h5 className="ms-3">{data ? data.msg : cardContent}</h5>
-            <Link className="ms-3" href='/'>{cardLink}</Link>
+        <div className={`w-52 rounded-2xl h-28 grid content-around p-2.5 ${className}`} style={backgroundImageStyle} >
+            <div>{cardHeader}</div>
+            <h5>{data ? data.msg : cardContent}</h5>
+            <Link href='/'>{cardLink}</Link>
         </div>
 
     );

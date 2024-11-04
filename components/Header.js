@@ -18,7 +18,7 @@ export default function Header(props) {
 
   return (
     <div className="grid grid-cols-12 text-center h-12 items-center">
-      {path === '/dashboard' ? <div className="col-span-2 ms-1 border-2 border-gray-500 rounded-2xl h-9 flex">
+      {path === '/inventory' ? <div className="col-span-2 ms-1 border-2 border-gray-500 rounded-2xl h-9 flex">
         <MagnifyingGlassIcon className="h-full w-8 border-0 pl-1 text-gray-500" />
         <input
           className="w-full h-full bg-transparent focus:outline-none rounded-r-2xl"
@@ -26,7 +26,7 @@ export default function Header(props) {
           onKeyDown={handleSearch}
         />
       </div> : <div className='col-span-2 '></div>}
-      <div className="font-serif col-span-8 font-playwriteCuba">{headerName}</div>
+      <div className="col-span-8">{headerName}</div>
       <div className="col-span-2 me-1 h-9 flex">
         <div className='w-full h-full'>
             <p className='text-xs'>Uroos Fatima</p>

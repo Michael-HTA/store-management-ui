@@ -1,62 +1,46 @@
-'use client'
+'use client';
+import { usePathname } from 'next/navigation'
 import React from 'react';
-import { Cog6ToothIcon, BuildingStorefrontIcon, ClipboardDocumentCheckIcon, HomeIcon, ArrowUturnLeftIcon, UserGroupIcon, ArchiveBoxIcon } from "@heroicons/react/24/outline";
-import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import { usePathname } from "next/navigation";
+import { 
+  Cog6ToothIcon, 
+  BuildingStorefrontIcon, 
+  ClipboardDocumentCheckIcon, 
+  HomeIcon, 
+  ArrowUturnLeftIcon, 
+  UserGroupIcon, 
+  ArchiveBoxIcon 
+} from "@heroicons/react/24/outline";
 import Link from 'next/link';
 
-const Navigator = React.memo(() => {
-  const drawerWidth = 240;
+const Navigator = () => {
+  const path = usePathname()
+  const iconSize = 'w-6 h-6 mr-2';
+
   const links = [
-    { path: "/dashboard", name: "Dashboard", icon: HomeIcon },
-    { path: "/inventory", name: "Inventory", icon: BuildingStorefrontIcon },
-    { path: "/sales", name: "Sales", icon: ClipboardDocumentCheckIcon },
-    { path: "/supplier", name: "Supplier", icon: UserGroupIcon },
-    { path: "/product", name: "Products", icon: ArchiveBoxIcon },
-    { path: "/setting", name: "Setting", icon: Cog6ToothIcon },
-    { path: "/logout", name: "Logout", icon: ArrowUturnLeftIcon },
+    { path: "/dashboard", name: "Dashboard", icon: <HomeIcon className={iconSize}/> },
+    { path: "/inventory", name: "Inventory", icon: <BuildingStorefrontIcon className={iconSize}/> },
+    { path: "/sales", name: "Sales", icon: <ClipboardDocumentCheckIcon className={iconSize}/> },
+    { path: "/supplier", name: "Supplier", icon: <UserGroupIcon className={iconSize}/> },
+    { path: "/product", name: "Products", icon: <ArchiveBoxIcon className={iconSize}/> },
+    { path: "/setting", name: "Setting", icon: <Cog6ToothIcon className={iconSize}/> },
+    { path: "/logout", name: "Logout", icon: <ArrowUturnLeftIcon className={iconSize}/> },
   ];
 
-  const path = usePathname();
-
   return (
-    <Drawer
-      variant="permanent"
-      anchor="left"
-      sx={{
-        width: drawerWidth,
-        flexShrink: 0,
-        '& .MuiDrawer-paper': {
-          width: drawerWidth,
-        },
-      }}
-    >
-      <List>
-        {links.map((item) => (
-          <ListItem key={item.name}>
-            <ListItemButton
-              component={Link}
-              href={item.path}
-              selected={path === item.path}
-              sx={{
-                "&.Mui-selected": {
-                  backgroundColor: "#DCDCDC"
-                },
-                ":hover": {
-                  backgroundColor: "#DCDCDC"
-                }
-              }}
-            >
-              <ListItemIcon className="w-6 h-6">
-                <item.icon className="w-full h-full" />
-              </ListItemIcon>
-              <ListItemText primary={item.name} className="text-sm" />
-            </ListItemButton>
-          </ListItem>
+    <nav className='w-60 h-full border-r-2'>
+      <header className='text-center p-2.5 text-3xl'>Welcome</header>
+      <ul>
+        {links.map((link) => (
+          <li key={link.path}> 
+            <Link href={link.path}  className={` m-0.5 hover:bg-slate-300 rounded-xl flex items-center px-[60px] py-3.5 ${path === link.path && 'bg-slate-300'}`}> 
+              {link.icon}
+              {link.name}
+            </Link>
+          </li>
         ))}
-      </List>
-    </Drawer>
+      </ul>
+    </nav>
   );
-});
+};
 
 export default Navigator;
