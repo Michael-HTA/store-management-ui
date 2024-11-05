@@ -32,7 +32,7 @@ export default function RecentInterest(props) {
 
     return (
 
-        <div className={`w-52 rounded-2xl h-28 grid content-around p-2.5 ${className}`} style={backgroundImageStyle} >
+        <div className={`w-44 rounded-2xl h-28 grid content-around p-2.5 ${className}`} style={backgroundImageStyle} >
             <div>{cardHeader}</div>
             <h5>{data ? data.msg : cardContent}</h5>
             <Link href='/' className="hover:text-blue-500 hover:underline">{cardLink}</Link>

@@ -56,7 +56,7 @@ const Calendar = () => {
             <div className="flex justify-between items-center mb-4">
                 <button
                     onClick={() => handleMonthChange('prev')}
-                    className="text-gray-600 hover:text-gray-800"
+                    className="text-gray-600 hover:text-gray-800 text-xl"
                 >
                     &lt;
                 </button>
@@ -65,7 +65,7 @@ const Calendar = () => {
                 </span>
                 <button
                     onClick={() => handleMonthChange('next')}
-                    className="text-gray-600 hover:text-gray-800"
+                    className="text-gray-600 hover:text-gray-800 text-xl"
                 >
                     &gt;
                 </button>

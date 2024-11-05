@@ -8,7 +8,7 @@ export default function DashboardPage() {
     return (
         <>
             <Header headerName='Dashboard'></Header>
-            <div className="flex flex-wrap justify-around mt-2.5">
+            <div className="flex flex-wrap mt-2.5 mx-2 justify-between">
                 <RecentInterest
                     backgroundimage="https://images.pexels.com/photos/9742805/pexels-photo-9742805.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     cardHeader="Daily's Revenue"
@@ -34,15 +34,16 @@ export default function DashboardPage() {
                     cardContent="56"
                     cardLink="View entire list"
                     className="sm:mt-0 mt-2" />
+                <Calendar />
             </div>
-            <div className="flex flex-wrap justify-evenly">
+            <div className="flex flex-wrap justify-between mx-2">
                 <div>
                     <BestSellingProducts tableHeadContent='Best Selling Products (Monthly)' />
                     <BestSellingProducts tableHeadContent='Out of Stock Products' />
                 </div>
-                <div className="flex items-center sm:mt-0 mt-2">
-                <Calendar />
-                </div>
+                {/* <div className="mt-2">
+                    <Calendar />
+                </div> */}
             </div>
 
         </>
