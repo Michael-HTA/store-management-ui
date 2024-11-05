@@ -33,7 +33,7 @@ export default function BestSellingProducts(props) {
 
     return (
         <>
-            <div className="border rounded-xl bg-white mt-4">
+            <div className="border rounded-xl bg-white mt-2">
                 <div className="m-2">
                     <div className="flex justify-between w-96">
                         <p className="font-medium">
