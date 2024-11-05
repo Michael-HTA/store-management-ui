@@ -12,6 +12,7 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from 'next/link';
 
+
 const Navigator = () => {
   const path = usePathname()
   const iconSize = 'w-6 h-6 mr-2';
@@ -27,7 +28,7 @@ const Navigator = () => {
   ];
 
   return (
-    <nav className='w-60 h-full border-r-2'>
+    <nav className='w-60 h-full'>
       <header className='text-center p-2.5 text-3xl'>Welcome</header>
       <ul>
         {links.map((link) => (

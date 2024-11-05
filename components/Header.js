@@ -26,7 +26,7 @@ export default function Header(props) {
           onKeyDown={handleSearch}
         />
       </div> : <div className='col-span-2 '></div>}
-      <div className="col-span-8">{headerName}</div>
+      <div className="col-span-8 text-2xl">{headerName}</div>
       <div className="col-span-2 me-1 h-9 flex">
         <div className='w-full h-full'>
             <p className='text-xs'>Uroos Fatima</p>
