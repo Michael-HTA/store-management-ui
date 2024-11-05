@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
         <div className="fixed top-0 left-0 h-screen">
           <Navigator></Navigator>
         </div>
-        <div className="absolute top-0 left-60 bg-slate-100 h-full">
+        <div className="ml-60 grow h-screen bg-slate-100 overflow-auto">
           {children}
         </div>
       </body>
