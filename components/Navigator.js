@@ -28,7 +28,7 @@ const Navigator = () => {
   ];
 
   return (
-    <nav className='w-60 h-full'>
+    <nav>
       <header className='text-center p-2.5 text-3xl'>Welcome</header>
       <ul>
         {links.map((link) => (

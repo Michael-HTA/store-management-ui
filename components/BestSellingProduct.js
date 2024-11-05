@@ -39,7 +39,7 @@ export default function BestSellingProducts(props) {
                         <p className="font-medium">
                             {tableHeadContent}
                         </p>
-                        <Link href='/' className="hover:underline hover:text-blue-600">View all</Link>
+                        <Link href='/' className="hover:underline hover:text-blue-500">View all</Link>
                     </div>
                     <div className="w-96 overflow-y-auto h-40 overscroll-auto scroll-smooth" style={{ scrollbarWidth: 'thin' }}>
                         <table>

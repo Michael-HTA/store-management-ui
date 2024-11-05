@@ -7,7 +7,7 @@ export default function DashboardPage() {
     return (
         <>
             <Header headerName='Dashboard'></Header>
-            <div className="flex flex-wrap justify-around">
+            <div className="flex flex-wrap justify-around mt-2.5">
                 <RecentInterest
                     backgroundimage="https://images.pexels.com/photos/9742805/pexels-photo-9742805.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     cardHeader="Daily's Revenue"
